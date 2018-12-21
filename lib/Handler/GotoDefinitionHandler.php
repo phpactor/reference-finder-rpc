@@ -49,7 +49,7 @@ class GotoDefinitionHandler implements Handler
     {
         $document = TextDocumentBuilder::create($arguments[self::PARAM_SOURCE])
             ->uri($arguments[self::PARAM_PATH])
-            ->language(self::PARAM_LANGUAGE)->build();
+            ->language($arguments[self::PARAM_LANGUAGE])->build();
 
         $offset = ByteOffset::fromInt($arguments[self::PARAM_OFFSET]);
         $location = $this->locator->locateDefinition($document, $offset);
