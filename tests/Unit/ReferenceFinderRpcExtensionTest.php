@@ -9,9 +9,7 @@ use Phpactor\Extension\ReferenceFinderRpc\ReferenceFinderRpcExtension;
 use Phpactor\Extension\ReferenceFinder\ReferenceFinderExtension;
 use Phpactor\Extension\Rpc\Request;
 use Phpactor\Extension\Rpc\RequestHandler;
-use Phpactor\Extension\Rpc\RequestHandler\LoggingHandler;
 use Phpactor\Extension\Rpc\Response\ErrorResponse;
-use Phpactor\Extension\Rpc\Response\OpenFileResponse;
 use Phpactor\Extension\Rpc\RpcExtension;
 
 class ReferenceFinderRpcExtensionTest extends TestCase

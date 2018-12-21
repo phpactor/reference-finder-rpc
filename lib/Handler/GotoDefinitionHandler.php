@@ -5,13 +5,9 @@ namespace Phpactor\Extension\ReferenceFinderRpc\Handler;
 use Phpactor\MapResolver\Resolver;
 use Phpactor\Extension\Rpc\Handler;
 use Phpactor\Extension\Rpc\Response\OpenFileResponse;
-use Phpactor\Extension\WorseReflectionExtra\GotoDefinition\GotoDefinition;
 use Phpactor\ReferenceFinder\DefinitionLocator;
 use Phpactor\TextDocument\ByteOffset;
 use Phpactor\TextDocument\TextDocumentBuilder;
-use Phpactor\WorseReflection\Reflector;
-use Phpactor\WorseReflection\Core\SourceCode;
-use Phpactor\WorseReflection\Core\Offset;
 
 class GotoDefinitionHandler implements Handler
 {

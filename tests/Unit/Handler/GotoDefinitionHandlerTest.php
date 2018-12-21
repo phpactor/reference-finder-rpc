@@ -4,7 +4,6 @@ namespace Phpactor\Extension\ReferenceFinderRpc\Tests\Unit\Handler;
 
 use PHPUnit\Framework\TestCase;
 use Phpactor\Extension\ReferenceFinderRpc\Handler\GotoDefinitionHandler;
-use Phpactor\Extension\Rpc\Handler;
 use Phpactor\Extension\Rpc\Response\OpenFileResponse;
 use Phpactor\Extension\Rpc\Test\HandlerTester;
 use Phpactor\ReferenceFinder\DefinitionLocation;
