@@ -3,6 +3,7 @@
     "description": "Description about my project",
     "license": "MIT",
     "type": "phpactor-extension",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Daniel Leech",
@@ -11,7 +12,9 @@
     ],
 
     "require": {
-        "phpactor/container": "^1.0"
+        "phpactor/container": "^1.0",
+        "phpactor/rpc-extension": "~0.1",
+        "phpactor/reference-finder-extension": "~0.1"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.10.6",
