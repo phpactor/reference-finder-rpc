@@ -1,5 +1,4 @@
 <?php
-
 namespace Phpactor\Extension\ReferenceFinderRpc\Tests\Unit\Handler;
 
 use PHPUnit\Framework\TestCase;
@@ -15,7 +14,7 @@ class GotoDefinitionHandlerTest extends TestCase
 {
     const EXAMPLE_SOURCE = 'some source file';
     const EXAMPLE_OFFSET = 1234;
-    const EXAMPLE_PATH = 'file:///some/path.php';
+    const EXAMPLE_PATH = '/some/path.php';
 
 
     public function testGotoDefinition()
