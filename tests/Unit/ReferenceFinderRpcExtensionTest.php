@@ -32,6 +32,6 @@ class ReferenceFinderRpcExtensionTest extends TestCase
         ]));
 
         $this->assertInstanceOf(ErrorResponse::class, $response);
-        $this->assertContains('Could not locate definition', $response->message());
+        $this->assertContains('Unable to locate definition', $response->message());
     }
 }
