@@ -55,7 +55,7 @@ class GotoDefinitionHandler implements Handler
         $location = $this->locator->locateDefinition($document, $offset);
 
         return OpenFileResponse::fromPathAndOffset(
-            $location->uri()->__toString(),
+            $location->uri()->path(),
             $location->offset()->toInt()
         );
     }
