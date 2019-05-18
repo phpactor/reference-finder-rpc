@@ -13,7 +13,7 @@
 
     "require": {
         "phpactor/container": "^1.0",
-        "phpactor/rpc-extension": "~0.1",
+        "phpactor/rpc-extension": "~0.2",
         "phpactor/reference-finder-extension": "~0.1"
     },
     "require-dev": {
@@ -34,7 +34,7 @@
     "extra": {
         "phpactor.extension_class": "Phpactor\\Extension\\ReferenceFinderRpc\\ReferenceFinderRpcExtension",
         "branch-alias": {
-            "dev-master": "0.1.x-dev"
+            "dev-master": "0.2.x-dev"
         }
     }
 }

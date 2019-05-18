@@ -23,10 +23,12 @@ class GotoDefinitionHandlerTest extends TestCase
             'source' => self::EXAMPLE_SOURCE,
             'offset' => self::EXAMPLE_OFFSET,
             'path' => self::EXAMPLE_PATH,
+            'target' => OpenFileResponse::TARGET_HORIZONTAL_SPLIT,
         ]);
 
         $this->assertInstanceOf(OpenFileResponse::class, $location);
         $this->assertEquals(self::EXAMPLE_PATH, $location->path());
+        $this->assertEquals(OpenFileResponse::TARGET_HORIZONTAL_SPLIT, $location->target());
     }
 
     public function create(): HandlerTester

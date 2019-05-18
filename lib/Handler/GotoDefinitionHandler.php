@@ -16,6 +16,7 @@ class GotoDefinitionHandler implements Handler
     const PARAM_SOURCE = 'source';
     const PARAM_PATH = 'path';
     const PARAM_LANGUAGE = 'language';
+    const PARAM_TARGET = 'target';
 
     /**
      * @var DefinitionLocator
@@ -37,6 +38,7 @@ class GotoDefinitionHandler implements Handler
     {
         $resolver->setDefaults([
             self::PARAM_LANGUAGE => 'php',
+            self::PARAM_TARGET => OpenFileResponse::TARGET_FOCUSED_WINDOW
         ]);
         $resolver->setRequired([
             self::PARAM_OFFSET,
@@ -57,6 +59,6 @@ class GotoDefinitionHandler implements Handler
         return OpenFileResponse::fromPathAndOffset(
             $location->uri()->path(),
             $location->offset()->toInt()
-        );
+        )->withTarget($arguments[self::PARAM_TARGET]);
     }
 }
