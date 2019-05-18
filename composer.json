@@ -13,7 +13,7 @@
 
     "require": {
         "phpactor/container": "^1.0",
-        "phpactor/rpc-extension": "~0.1",
+        "phpactor/rpc-extension": "~0.2",
         "phpactor/reference-finder-extension": "~0.1"
     },
     "require-dev": {
