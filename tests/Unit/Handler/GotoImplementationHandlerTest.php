@@ -39,9 +39,9 @@ class GotoImplementationHandlerTest extends TestCase
 
     public function testSelectFromMultiple()
     {
-        $location = $this->create([
-            Location::fromPathAndOffset('/one', 10),
-            Location::fromPathAndOffset('/two', 10)
+        $response = $this->create([
+            Location::fromPathAndOffset(__FILE__, 20),
+            Location::fromPathAndOffset(__FILE__, 40)
         ])->handle('goto_implementation', [
             'source' => self::EXAMPLE_SOURCE,
             'offset' => self::EXAMPLE_OFFSET,
@@ -49,7 +49,7 @@ class GotoImplementationHandlerTest extends TestCase
             'target' => OpenFileResponse::TARGET_HORIZONTAL_SPLIT,
         ]);
 
-        $this->assertInstanceOf(FileReferencesResponse::class, $location);
+        $this->assertInstanceOf(FileReferencesResponse::class, $response);
     }
 
 
