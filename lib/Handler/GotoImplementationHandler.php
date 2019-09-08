@@ -70,7 +70,7 @@ class GotoImplementationHandler extends AbstractHandler
         $locations = $this->finder->findImplementations($document, $offset);
 
         if (1 !== $locations->count()) {
-            list($references, $location) = $this->locationsToReferences($locations);
+            $references = $this->locationsToReferences($locations);
 
             return new FileReferencesResponse($references);
         }
@@ -92,7 +92,7 @@ class GotoImplementationHandler extends AbstractHandler
             $line = (new LineAtOffset())->__invoke($contents, $location->offset()->toInt());
         
             $fileReferences = FileReferences::fromPathAndReferences(
-                $location->uri()->__toString(),
+                $location->uri()->path(),
                 [
                     Reference::fromStartEndLineNumberLineAndCol($location->offset()->toInt(), $location->offset()->toInt(), $lineCol->line(), $line, $lineCol->col())
                 ]
@@ -100,7 +100,7 @@ class GotoImplementationHandler extends AbstractHandler
             $references[] = $fileReferences;
         }
 
-        return [$references, $location];
+        return $references;
     }
 
     private function fileContents(Location $location)
