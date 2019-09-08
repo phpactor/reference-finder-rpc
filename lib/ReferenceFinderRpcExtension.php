@@ -20,6 +20,10 @@ class ReferenceFinderRpcExtension implements Extension
         $container->register('reference_finder_rpc.handler.goto_definition', function (Container $container) {
             return new GotoDefinitionHandler($container->get(ReferenceFinderExtension::SERVICE_DEFINITION_LOCATOR));
         }, [ RpcExtension::TAG_RPC_HANDLER => [ 'name' => 'goto_definition' ]]);
+
+        $container->register('reference_finder_rpc.handler.goto_implementation', function (Container $container) {
+            return new GotoImplementationHandler($container->get(ReferenceFinderExtension::SERVICE_IMPLEMENTATION_FINDER));
+        }, [ RpcExtension::TAG_RPC_HANDLER => [ 'name' => 'goto_implementation' ]]);
     }
 
     /**
