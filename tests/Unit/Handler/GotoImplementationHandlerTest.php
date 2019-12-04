@@ -7,8 +7,6 @@ use Phpactor\Extension\Rpc\Response\FileReferencesResponse;
 use Phpactor\Extension\Rpc\Response\OpenFileResponse;
 use Phpactor\Extension\Rpc\Test\HandlerTester;
 use Phpactor\ReferenceFinder\ClassImplementationFinder;
-use Phpactor\ReferenceFinder\ImplementationLocation;
-use Phpactor\ReferenceFinder\ImplementationLocator;
 use Phpactor\TextDocument\ByteOffset;
 use Phpactor\TextDocument\Location;
 use Phpactor\TextDocument\Locations;

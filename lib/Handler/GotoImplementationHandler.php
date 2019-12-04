@@ -2,17 +2,13 @@
 
 namespace Phpactor\Extension\ReferenceFinderRpc\Handler;
 
-use Phpactor\Completion\Core\Util\OffsetHelper;
 use Phpactor\Extension\Rpc\Handler\AbstractHandler;
 use Phpactor\Extension\Rpc\Response\FileReferencesResponse;
-use Phpactor\Extension\Rpc\Response\Input\ListInput;
 use Phpactor\Extension\Rpc\Response\Reference\FileReferences;
 use Phpactor\Extension\Rpc\Response\Reference\Reference;
 use Phpactor\MapResolver\Resolver;
-use Phpactor\Extension\Rpc\Handler;
 use Phpactor\Extension\Rpc\Response\OpenFileResponse;
 use Phpactor\ReferenceFinder\ClassImplementationFinder;
-use Phpactor\ReferenceFinder\DefinitionFinder;
 use Phpactor\TextDocument\ByteOffset;
 use Phpactor\TextDocument\Location;
 use Phpactor\TextDocument\Locations;
@@ -107,7 +103,8 @@ class GotoImplementationHandler extends AbstractHandler
     {
         if (!file_exists($location->uri()->path())) {
             throw new RuntimeException(sprintf(
-                'Could not open file "%s"', $location->uri()->path()
+                'Could not open file "%s"',
+                $location->uri()->path()
             ));
         }
 
