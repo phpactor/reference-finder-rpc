@@ -28,7 +28,7 @@ class ReferenceFinderRpcExtensionTest extends TestCase
         ]));
 
         $this->assertInstanceOf(ErrorResponse::class, $response);
-        $this->assertContains('Unable to locate definition', $response->message());
+        $this->assertContains('No definition locators', $response->message());
     }
 
     public function testGotoType()
@@ -44,7 +44,7 @@ class ReferenceFinderRpcExtensionTest extends TestCase
         ]));
 
         $this->assertInstanceOf(ErrorResponse::class, $response);
-        $this->assertContains('Unable to locate definition', $response->message());
+        $this->assertContains('No type locators', $response->message());
     }
 
     private function createContainer(): Container
