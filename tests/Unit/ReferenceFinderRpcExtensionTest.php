@@ -3,6 +3,7 @@
 namespace Phpactor\Extension\ReferenceFinderRpc\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+use Phpactor\Container\Container;
 use Phpactor\Container\PhpactorContainer;
 use Phpactor\Extension\Logger\LoggingExtension;
 use Phpactor\Extension\ReferenceFinderRpc\ReferenceFinderRpcExtension;
@@ -14,14 +15,9 @@ use Phpactor\Extension\Rpc\RpcExtension;
 
 class ReferenceFinderRpcExtensionTest extends TestCase
 {
-    public function testRegister()
+    public function testGotoDefinition()
     {
-        $container = PhpactorContainer::fromExtensions([
-            ReferenceFinderExtension::class,
-            ReferenceFinderRpcExtension::class,
-            RpcExtension::class,
-            LoggingExtension::class,
-        ]);
+        $container = $this->createContainer();
         $handler = $container->get(RpcExtension::SERVICE_REQUEST_HANDLER);
 
         $this->assertInstanceOf(RequestHandler::class, $handler);
@@ -33,5 +29,32 @@ class ReferenceFinderRpcExtensionTest extends TestCase
 
         $this->assertInstanceOf(ErrorResponse::class, $response);
         $this->assertContains('Unable to locate definition', $response->message());
+    }
+
+    public function testGotoType()
+    {
+        $container = $this->createContainer();
+        $handler = $container->get(RpcExtension::SERVICE_REQUEST_HANDLER);
+
+        $this->assertInstanceOf(RequestHandler::class, $handler);
+        $response = $handler->handle(Request::fromNameAndParameters('goto_type', [
+            'offset' => 10,
+            'source' => '<?php ' . __CLASS__ . ';',
+            'path' => __FILE__,
+        ]));
+
+        $this->assertInstanceOf(ErrorResponse::class, $response);
+        $this->assertContains('Unable to locate definition', $response->message());
+    }
+
+    private function createContainer(): Container
+    {
+        $container = PhpactorContainer::fromExtensions([
+            ReferenceFinderExtension::class,
+            ReferenceFinderRpcExtension::class,
+            RpcExtension::class,
+            LoggingExtension::class,
+        ]);
+        return $container;
     }
 }
