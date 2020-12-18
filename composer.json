@@ -17,7 +17,7 @@
         "phpactor/reference-finder-extension": "^0.1.4"
     },
     "require-dev": {
-        "phpstan/phpstan": "~0.11.0",
+        "phpstan/phpstan": "~0.12.0",
         "phpunit/phpunit": "~7.0",
         "friendsofphp/php-cs-fixer": "~2.15.0"
     },
