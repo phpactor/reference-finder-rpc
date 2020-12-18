@@ -1,4 +1,4 @@
 ReferenceFinderRpc
 ====================
 
-[![Build Status](https://travis-ci.org/phpactor/reference-finder-rpc-extension.svg?branch=master)](https://travis-ci.org/phpactor/reference-finder-rpc-extension)
+![CI](https://github.com/phpactor/reference-finder-rpc-extension/workflows/CI/badge.svg)
