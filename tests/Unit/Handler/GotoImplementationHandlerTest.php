@@ -19,7 +19,7 @@ class GotoImplementationHandlerTest extends TestCase
     const EXAMPLE_PATH = '/some/path.php';
 
 
-    public function testGotoSingleImplementation()
+    public function testGotoSingleImplementation(): void
     {
         $location = $this->create([
             Location::fromPathAndOffset(self::EXAMPLE_PATH, 10)
@@ -35,7 +35,7 @@ class GotoImplementationHandlerTest extends TestCase
         $this->assertEquals(OpenFileResponse::TARGET_HORIZONTAL_SPLIT, $location->target());
     }
 
-    public function testSelectFromMultiple()
+    public function testSelectFromMultiple(): void
     {
         $response = $this->create([
             Location::fromPathAndOffset(__FILE__, 20),

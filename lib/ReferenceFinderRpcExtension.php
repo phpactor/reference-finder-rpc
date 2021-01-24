@@ -17,7 +17,7 @@ class ReferenceFinderRpcExtension implements Extension
     /**
      * {@inheritDoc}
      */
-    public function load(ContainerBuilder $container)
+    public function load(ContainerBuilder $container): void
     {
         $container->register('reference_finder_rpc.handler.goto_definition', function (Container $container) {
             return new GotoDefinitionHandler($container->get(ReferenceFinderExtension::SERVICE_DEFINITION_LOCATOR));
@@ -35,7 +35,7 @@ class ReferenceFinderRpcExtension implements Extension
     /**
      * {@inheritDoc}
      */
-    public function configure(Resolver $schema)
+    public function configure(Resolver $schema): void
     {
     }
 }

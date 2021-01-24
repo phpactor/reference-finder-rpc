@@ -17,7 +17,7 @@ class GotoDefinitionHandlerTest extends TestCase
     const EXAMPLE_PATH = '/some/path.php';
 
 
-    public function testGotoDefinition()
+    public function testGotoDefinition(): void
     {
         $location = $this->create()->handle('goto_definition', [
             'source' => self::EXAMPLE_SOURCE,
