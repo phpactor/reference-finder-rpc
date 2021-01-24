@@ -1,11 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Phpactor\\\\Extension\\\\ReferenceFinderRpc\\\\Handler\\\\GotoDefinitionHandler\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Handler/GotoDefinitionHandler.php
-
-		-
 			message: "#^Method Phpactor\\\\Extension\\\\ReferenceFinderRpc\\\\Handler\\\\GotoDefinitionHandler\\:\\:handle\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: lib/Handler/GotoDefinitionHandler.php
@@ -14,11 +9,6 @@ parameters:
 			message: "#^Method Phpactor\\\\Extension\\\\ReferenceFinderRpc\\\\Handler\\\\GotoDefinitionHandler\\:\\:handle\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: lib/Handler/GotoDefinitionHandler.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ReferenceFinderRpc\\\\Handler\\\\GotoImplementationHandler\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Handler/GotoImplementationHandler.php
 
 		-
 			message: "#^Method Phpactor\\\\Extension\\\\ReferenceFinderRpc\\\\Handler\\\\GotoImplementationHandler\\:\\:handle\\(\\) has no return typehint specified\\.$#"
@@ -39,11 +29,6 @@ parameters:
 			message: "#^Method Phpactor\\\\Extension\\\\ReferenceFinderRpc\\\\Handler\\\\GotoImplementationHandler\\:\\:fileContents\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: lib/Handler/GotoImplementationHandler.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ReferenceFinderRpc\\\\Handler\\\\GotoTypeHandler\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Handler/GotoTypeHandler.php
 
 		-
 			message: "#^Method Phpactor\\\\Extension\\\\ReferenceFinderRpc\\\\Handler\\\\GotoTypeHandler\\:\\:handle\\(\\) has no return typehint specified\\.$#"

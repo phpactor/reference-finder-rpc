@@ -15,7 +15,7 @@ use Phpactor\Extension\Rpc\RpcExtension;
 
 class ReferenceFinderRpcExtensionTest extends TestCase
 {
-    public function testGotoDefinition()
+    public function testGotoDefinition(): void
     {
         $container = $this->createContainer();
         $handler = $container->get(RpcExtension::SERVICE_REQUEST_HANDLER);
@@ -31,7 +31,7 @@ class ReferenceFinderRpcExtensionTest extends TestCase
         $this->assertStringContainsString('No definition locators', $response->message());
     }
 
-    public function testGotoType()
+    public function testGotoType(): void
     {
         $container = $this->createContainer();
         $handler = $container->get(RpcExtension::SERVICE_REQUEST_HANDLER);
